@@ -1,0 +1,47 @@
+{{ form_start(form) }}
+
+<div class="mb-3">
+    {{ form_label(form.name) }}
+    {# Add 'is-invalid' class if there are errors on the name field #}
+    {{ form_widget(form.name, {'attr': {
+        'class': 'form-control' ~ (form.name.vars.errors|length > 0 ? ' is-invalid' : '')
+    }}) }}
+    {# This will render the error message with Bootstrap's invalid-feedback class #}
+    {{ form_errors(form.name) }}
+</div>
+
+<div class="mb-3">
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email, {'attr': {
+        'class': 'form-control' ~ (form.email.vars.errors|length > 0 ? ' is-invalid' : '')
+    }}) }}
+    {{ form_errors(form.email) }}
+</div>
+
+<div class="mb-3">
+    {{ form_label(form.phoneNumber) }}
+    {{ form_widget(form.phoneNumber, {'attr': {
+        'class': 'form-control' ~ (form.phoneNumber.vars.errors|length > 0 ? ' is-invalid' : '')
+    }}) }}
+    {{ form_errors(form.phoneNumber) }}
+</div>
+
+<div class="mb-3">
+    {{ form_label(form.hireDate) }}
+    {{ form_widget(form.hireDate, {'attr': {
+        'class': (form.hireDate.vars.errors|length > 0 ? 'is-invalid' : '')
+    }}) }}
+    {{ form_errors(form.hireDate) }}
+</div>
+
+<div class="mb-3">
+    {{ form_label(form.department) }}
+    {{ form_widget(form.department, {'attr': {
+        'class': 'form-select' ~ (form.department.vars.errors|length > 0 ? ' is-invalid' : '')
+    }}) }}
+    {{ form_errors(form.department) }}
+</div>
+
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}

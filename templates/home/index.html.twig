@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block title %}Welcome to Employee Management{% endblock %}
+
+{% block body %}
+<div class="text-center mt-5">
+    <h1 class="display-4 mb-4">Welcome to the Employee Management System</h1>
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+        <a href="{{ path('app_employee_index') }}" class="btn btn-primary btn-lg">
+            <i class="bi bi-people-fill"></i> Employees
+        </a>
+        <a href="{{ path('app_department_index') }}" class="btn btn-secondary btn-lg">
+            <i class="bi bi-building"></i> Departments
+        </a>
+    </div>
+</div>
+{% endblock %}
