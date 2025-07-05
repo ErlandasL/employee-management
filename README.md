@@ -24,17 +24,22 @@ cd employee-management
 ```
 
 ### 2. Install PHP Dependencies
+```bash
 composer install
-
+```
 ### 2. Add database path to .env:
 
 ### 3. Create and Migrate Database
+```bash
 php bin/console doctrine:database:create
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
-
+```
 ### 4. Create some departments in database:
+```bash
 php bin/console doctrine:fixtures:load
-
+```
 ### 5. Finally start the application:
+```bash
 symfony serve
+```
