@@ -43,3 +43,5 @@ php bin/console doctrine:fixtures:load
 ```bash
 symfony serve
 ```
+
+my symfony version for thsi project 5.12.0, php version 8.2.28
